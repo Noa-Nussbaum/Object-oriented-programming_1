@@ -20,6 +20,13 @@ class building:
                 self.numE = len(self.elevators)
                 list =[]
                 self.list = [0 for i in range(0,self.numE)]
+                self.dir = np.array(self.numE)
+                for i in range(0,self.numE):
+                    if(i%2==0):
+                        dir[i]=
+                    else:
+                        dir.append(-1)
+
 
         except IOError as e:
             print(e)
