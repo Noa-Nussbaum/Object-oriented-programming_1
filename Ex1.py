@@ -6,7 +6,7 @@ import calls
 CAddress = 'Calls_d.csv'
 c = calls.calls(CAddress)
 # Let's create a new building object
-BAddress = 'B4.json'
+BAddress = 'B5.json'
 b = building.building(BAddress)
 
 elevStops = []
