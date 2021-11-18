@@ -18,15 +18,15 @@ class building:
                     ele.append(el)
                 self.elevators = ele.copy()
                 self.numE = len(self.elevators)
-                list =[]
-                self.list = [0 for i in range(0,self.numE)]
-                self.dir = np.array(self.numE)
-                for i in range(0,self.numE):
-                    if(i%2==0):
-                        dir[i]=
-                    else:
-                        dir.append(-1)
-
+                self.list =[]
+                for i in range(0, self.numE):
+                    self.list.append(0)
+                # self.direction = []
+                # for i in range(0,self.numE):
+                #     if i % 2 == 0:
+                #         self.direction[i]= 1
+                #     else:
+                #         self.direction[i] = -1
 
         except IOError as e:
             print(e)

@@ -1,17 +1,12 @@
 import csv
-import json
-import numpy as np
 import building
 import calls
-import pandas as pd
-
-
 
 # Let's create a new calls object
-CAddress = '/Users/nnussbaum/Ariel/data/Ex1_Calls_case_2_b.csv'
+CAddress = 'Calls_d.csv'
 c = calls.calls(CAddress)
 # Let's create a new building object
-BAddress = '/Users/nnussbaum/Ariel/Year 2 - 1/עבודות להגשה/Ex1_input/Ex1_Buildings/B5.json'
+BAddress = 'B4.json'
 b = building.building(BAddress)
 
 elevStops = []
@@ -45,18 +40,20 @@ def allocateTo(call):
                         if(int(b.list[j])<=int(src)):
                             if(dist(b.list[j],j,int(src))<dist(b.list[temp],temp,int(src))):
                                 temp =j
-                        elevStops[temp].append(src)
-                        elevStops[temp].append(dest)
-                        b.list[temp]=dest
-                        c.calls[i][5]=temp #can i move this to end so to not repeat?
-                    if(src>dest):  # call going down
+                        else:
+                            temp = (i)%b.numE
+                    else:  # call going down
                         if(int(b.list[j])>=int(src)):
                             if(dist(b.list[j],j, int(src)) < dist(b.list[temp],temp, int(src))):
                                 temp = j
-                        elevStops[temp].append(src)
-                        elevStops[temp].append(dest)
-                        b.list[temp] = dest
-                        c.calls[i][5] = temp  # can i move this to end so to not repeat?
+                        else:
+                            temp = (i*j) % b.numE
+                    elevStops[temp].append(src)
+                    elevStops[temp].append(dest)
+                    b.list[temp] = dest
+                    c.calls[i][5] = temp
+
+
 
 
 allocateTo(c.calls)

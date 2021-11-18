@@ -13,12 +13,6 @@ class calls:
         for row in csvreader:
             rows.append(row)
         CAddress.close
-        # Create direction vector
-        for i in rows:
-            if (i[2] < i[3]):
-                i.append(1)
-            else:
-                i.append(-1)
         self.calls = np.array(rows)
 
     def get_calls(self):
