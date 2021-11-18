@@ -1,7 +1,5 @@
 import json
 
-import numpy as np
-
 
 class building:
     # Let's upload the JSON file
@@ -14,19 +12,12 @@ class building:
                 self.numF = (self.maxFloor - self.minFloor)
                 ele = []
                 for el in data["_elevators"]:
-                    # elev = ele[el]
                     ele.append(el)
                 self.elevators = ele.copy()
                 self.numE = len(self.elevators)
                 self.list =[]
                 for i in range(0, self.numE):
                     self.list.append(0)
-                # self.direction = []
-                # for i in range(0,self.numE):
-                #     if i % 2 == 0:
-                #         self.direction[i]= 1
-                #     else:
-                #         self.direction[i] = -1
 
         except IOError as e:
             print(e)
