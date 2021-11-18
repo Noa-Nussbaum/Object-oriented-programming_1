@@ -64,6 +64,7 @@ At the end of the whole process after we have assigned an elevator for every cal
 
 
 ### Project UML Diagram:
+<img width="640" alt="UML" src="https://user-images.githubusercontent.com/76524924/142403545-bfd14015-7178-4f2a-aaa2-fe2af01e8aa0.png">
 
 
 
